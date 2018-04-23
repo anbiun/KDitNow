@@ -26,5 +26,10 @@ namespace KDitNow.Controllers
 
             return View();
         }
+        [HttpPost]
+        public string Finding(string Val)
+        {
+            return "test" + Val ;
+        }
     }
 }

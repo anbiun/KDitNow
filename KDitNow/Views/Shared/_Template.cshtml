@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width" />*@
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="@Url.Content("/Content/Theme/")/css/main.css" />
+</head>
+<body>
+    <!-- Scripts -->
+    <script src="@Url.Content("/Content/Theme/")/js/jquery.min.js"></script>
+    <script src="@Url.Content("/Content/Theme/")/js/jquery.scrollex.min.js"></script>
+    <script src="@Url.Content("/Content/Theme/")/js/skel.min.js"></script>
+    <script src="@Url.Content("/Content/Theme/")/js/util.js"></script>
+    <script src="@Url.Content("/Content/Theme/")/js/main.js"></script>
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="logo">@Html.ActionLink("KDit", "Index", "Home")<span>Now</span></a></div>
+        <a href="#menu">เมนู</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li>@Html.ActionLink("หน้าแรก", "Index", "Home")</li>
+            <li>@Html.ActionLink("ติดต่อเรา", "Contact", "Home")</li>
+            <li>@Html.ActionLink("เกี่ยวกับเรา", "About", "Home")</li>
+        </ul>
+    </nav>
+    <section class="banner full">
+        <article>
+            <img src="@Url.Content("/Content/Theme/")images/slide01.jpg" alt="" />
+            <div class="inner">
+                <header>
+                    @Html.ActionLink("www.kditnow.com", "Index", "Home")
+                    <hr />
+                    <h3>เช็คเครดิตพ่อค้า,แม่ค้าออนไลน์</h3>
+                    @using (Html.BeginForm("Finding", "Home", FormMethod.Post))
+                    {
+                    <form method="post">
+                        <input type="text" name="val" id="name" value="" placeholder="เลขบัญชีผู้ขาย">
+                        <br />
+                        <a href="#one" class="button special icon fa-search" id="submit">ค้นหา</a>
+                    </form>
+                    }
+                </header>
+            </div>
+        </article>
+    </section>
+
+    <section id="one" class="wrapper style2">
+        <div class="inner">
+            <header class="align-center">
+                <p>@RenderBody()</p>
+            </header>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            © Untitled. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
